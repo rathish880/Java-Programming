@@ -28,7 +28,7 @@ public class demo{
         //     System.out.println(nums + " ");
         // }
 
-        System.out.println(A rrays.toString(arr));
+        System.out.println(Arrays.toString(arr));
 
     }
 }
