@@ -4,6 +4,7 @@ public class functionPassing {
     public static void main(String args[]){
         int nums[]={2,3,5,7,2,1,9};
         System.out.println(Arrays.toString(nums));
+        //System.out.println(nums);
 
         change(nums);
         System.out.println(Arrays.toString(nums));
