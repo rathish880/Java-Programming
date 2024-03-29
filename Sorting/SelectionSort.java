@@ -11,7 +11,7 @@ public class SelectionSort {
             int max=0;
             for(int j=1;j<=last;j++){
                 if(arr[max]<arr[j]){
-                    max=arr[j];
+                    //max=arr[j];
                     max=j;
 
                 }
