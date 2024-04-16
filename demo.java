@@ -1,6 +1,5 @@
 import java.util.Arrays;
 import java.util.Scanner;
-import java.*;
 
 public class demo{
     public static void main(String args[])
