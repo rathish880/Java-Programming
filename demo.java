@@ -13,7 +13,7 @@ public class demo{
         arr[3]=13;
         arr[4]=23;
 
-        System.out.println(arr[2]);
+        //System.out.println(arr[2]);
 
         // for(int i=0;i<arr.length;i++){
         //     arr[i]=sn.nextInt();
@@ -27,7 +27,14 @@ public class demo{
         //     System.out.println(nums + " ");
         // }
 
-        System.out.println(Arrays.toString(arr));
+        //System.out.println(Arrays.toString(arr));
+        System.out.println('a'+1);
+        String ab="201ABvid";
+        int index=ab.charAt(0)- '0';
+        // System.out.println(index);
+        // System.out.println(ab.charAt(3)+2);
+        // System.out.println('0');
+        System.out.println(ab.charAt(4)-ab.charAt(2));
 
     }
 }
