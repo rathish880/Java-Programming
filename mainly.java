@@ -1,8 +1,8 @@
 
 
 class BankAccount{
-    private String accountNumber;
-    private String accountHolderName;
+    public String accountNumber;
+    public String accountHolderName;
     public double balance; 
     
     public void deposit(double amount){
@@ -57,11 +57,60 @@ class SavingsAccount extends BankAccount {
         super(AccountNumber, accountHolderName);
     }   
 }
-class main{
+abstract class Transaction {
+    protected BankAccount account;
+    protected double amount;
+
+    public Transaction(BankAccount account, double amount) {
+        this.account = account;
+        this.amount = amount;
+    }
+
+    public abstract void execute();
+
+    public abstract void undo();
+}
+
+class DepositTransaction extends Transaction {
+    public DepositTransaction(BankAccount account, double amount) {
+        super(account, amount);
+    }
+
+    @Override
+    public void execute() {
+        account.deposit(amount);
+    }
+
+    @Override
+    public void undo() {
+        account.withdraw(amount);
+    }
+}
+
+class WithdrawalTransaction extends Transaction {
+    public WithdrawalTransaction(BankAccount account, double amount) {
+        super(account, amount);
+    }
+
+    @Override
+    public void execute() {
+        account.withdraw(amount);
+    }
+
+    @Override
+    public void undo() {
+        account.deposit(amount);
+    }
+}
+class mainly{
     public static void main(String[] args) {
         BankAccount currentAccount=new CurrentAccount("12345", "John Doe");
-        currentAccount.deposit(1000);
-        ((CurrentAccount) currentAccount).deductPenalty();  // PENALTY_AMOUNT = 10.0 (constant)
-        System.out.println(currentAccount.getBalance());  
+        // currentAccount.deposit(1000);
+        // ((CurrentAccount) currentAccount).deductPenalty();  // PENALTY_AMOUNT = 10.0 (constant)
+        // System.out.println(currentAccount.getBalance()); 
+        
+        Transaction deposit = new DepositTransaction(currentAccount, 500);
+        deposit.execute();
+        System.out.println(currentAccount.getBalance());
     }
 }
