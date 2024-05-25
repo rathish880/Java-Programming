@@ -20,7 +20,7 @@ public class permutation {
             String first=result.substring(0,i);
             String second=result.substring(i,result.length());
             permut(first + ch + second,Original.substring(1));
-        }
+        }    
         
     }
 

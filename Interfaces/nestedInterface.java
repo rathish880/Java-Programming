@@ -3,9 +3,14 @@ package Interfaces;
 public class nestedInterface {
     
     public interface nested{
-        public voif greet();
+        public void greet();
     }
     
 }
 
-public class A im
+class A implements nestedInterface.nested{
+    @Override
+    public void greet(){
+        System.out.println("I'm here to greet everyone");
+    }
+}
