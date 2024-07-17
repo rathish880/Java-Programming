@@ -7,6 +7,7 @@ public class selection_sort {
         int[] arr={2,9,0,1,6,7,11,3};
         selection(arr,arr.length,0,0);
         System.out.println(Arrays.toString(arr));
+        System.out.println(arr);
         
     }
     public static void selection(int[] arr,int n,int index,int max){
