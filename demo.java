@@ -32,7 +32,7 @@ public class demo{
         String ab="201ABvid";
         int index=ab.charAt(0)- '0';
         // System.out.println(index);
-        // System.out.println(ab.charAt(3)+2);
+        System.out.println(ab.charAt(3)+2);
         // System.out.println('0');
         System.out.println(index);
         System.out.println(ab.charAt(4)-ab.charAt(2));
