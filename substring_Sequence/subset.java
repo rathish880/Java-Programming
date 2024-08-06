@@ -49,9 +49,9 @@ public class subset {
         }
 
         char ch=Original.charAt(0);
-        ArrayList<String> left=subSetReturn(ch+result,Original.substring(1));
-        ArrayList<String> right=subSetReturn(result,Original.substring(1));
-        ArrayList<String> ascii=subSetReturn(result + (ch + 0),Original.substring(1));
+        ArrayList<String> left=subSetReturn1(result+ch,Original.substring(1));
+        ArrayList<String> right=subSetReturn1(result,Original.substring(1));
+        ArrayList<String> ascii=subSetReturn1(result + (ch + 0),Original.substring(1));
         left.addAll(right);
         left.addAll(ascii); 
         return left;

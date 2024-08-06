@@ -4,7 +4,8 @@ import java.util.ArrayList;
 
 public class dice {
     public static void main(String[] args) {
-        System.out.println(dicethrowReturn("", 4));
+        //System.out.println(dicethrowReturn("", 4));
+        dicethrow("", 4);
        
         
     }
