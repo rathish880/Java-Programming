@@ -36,7 +36,8 @@ public class demo{
         // System.out.println('0');
         System.out.println(index);
         System.out.println(ab.charAt(4)-ab.charAt(2));
-        System.out.println(10 +'a'-1);
+        char ch=(char)10+'a';
+        System.out.println(ch);
 
     }
 }

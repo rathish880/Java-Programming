@@ -2,7 +2,7 @@ package BackTracking;
 
 public class N_Queens_backtracking {
     public static void main(String[] args) {
-        boolean[][] board=new boolean[5][5];
+        boolean[][] board=new boolean[4][4];
         System.out.println(queens(board,0));
     }
     
@@ -20,7 +20,7 @@ public static int queens(boolean[][] board,int row){
         if(isSafe(board,row,col)){
             board[row][col]=true;
             count+=queens(board,row+1);
-            board[row][col]=false;
+            board[row][col]=false;  
         }   
     }
     return count;

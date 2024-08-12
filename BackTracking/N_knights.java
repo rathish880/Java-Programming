@@ -1,0 +1,92 @@
+package BackTracking;
+
+public class N_knights{
+    public static void main(String[] args) {
+        boolean[][] board=new boolean[4][4];
+        System.out.println(knights(board,0));
+    }
+    
+    
+
+
+public static int knights(boolean[][] board,int row){
+    if(row==board.length){
+        display(board);
+        System.out.println();
+        return 1;
+    }
+    int count=0;
+    for(int col=0;col<board.length;col++){
+        if(isSafe(board,row,col)){
+            board[row][col]=true;
+            count+=knights(board,row+1);
+            board[row][col]=false;  
+        }   
+    }
+    return count;
+}
+public static boolean isSafe(boolean[][]board,int row,int col){
+    // for(int i=0;i<row;i++){
+    //     if(board[i][col]){
+    //         return false;
+    //     }
+    // }
+
+    // checking for row-2 and col-1
+    if(row-2>=0 && row-2<board.length && col-1>=0 && col-1<board.length){
+        if(board[row-2][col-1]){
+            return false;
+        }
+    }
+    if(row-2>=0 && row-2<board.length && col+1>=0 && col+1<board.length){
+        if(board[row-2][col+1]){
+            return false;
+        }
+    }
+    
+    if(row-1>=0 && row-1<board.length && col-2>=0 && col-2<board.length){
+        if(board[row-1][col-2]){
+            return false;
+        }
+    }
+    
+    if(row-1>=0 && row-1<board.length && col+2>=0 && col+2<board.length){
+        if(board[row-1][col+2]){
+            return false;
+        }
+    }
+    
+    
+
+    //checking for queen in left side
+    // int maxLeft=Math.min(row,col);
+    // for(int i=1;i<=maxLeft;i++){
+    //     if(board[row-i][col-i]){
+    //         return false;
+    //     }
+    // }
+
+    // int maxRight=Math.min(row,board.length-col-1);
+    // for(int i=1;i<=maxRight;i++){
+    //     if(board[row-i][col+i]){
+    //         return false;
+    //     }
+    // }
+    return true;
+}
+
+public static void display(boolean[][] board){
+    for(boolean[] row: board){
+        for(boolean col:row){
+            if(col){
+                System.out.print("K"+" ");
+            }
+            else{
+                System.out.print("X"+" ");
+            }
+           
+        }
+        System.out.println();
+    }
+}
+}
