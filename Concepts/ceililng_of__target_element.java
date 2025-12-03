@@ -1,6 +1,6 @@
 package Concepts;
 
-public class ceililng_of__target_element {
+public class     {
 
     public static void main (String args[]){
         int[] arr={1,3,7,9,10,15,19};
